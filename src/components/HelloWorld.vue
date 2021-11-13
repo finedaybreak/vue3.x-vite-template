@@ -31,7 +31,7 @@ const count = ref(0);
         <code>components/HelloWorld.vue</code> to test hot module replacement.
     </p>
     <p>
-        <a-button type="primary">AntD Button</a-button>
+        <a-button @click="$router.push({ name: 'About' })" type="primary">AntD Button Go About</a-button>
     </p>
 </template>
 
