@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useStore } from 'vuex';
+import { key } from '../store';
+
+const store = useStore(key);
+
+const name = computed(() => store.state.user?.name);
+const age = computed(() => store.state.user?.age);
 
 defineProps<{ msg: string }>();
 
@@ -33,6 +40,8 @@ const count = ref(0);
     <p>
         <a-button @click="$router.push({ name: 'About' })" type="primary">AntD Button Go About</a-button>
     </p>
+
+    <h2>{{ `This template made by ${name}` }}</h2>
 </template>
 
 <style scoped>
