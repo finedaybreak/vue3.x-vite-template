@@ -1,21 +1,36 @@
 {
-  "name": "vue3.x-vite-template",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
-  },
-  "dependencies": {
-    "ant-design-vue": "^2.2.8",
-    "element-plus": "^1.2.0-beta.3",
-    "vue": "^3.2.21"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.3",
-    "typescript": "^4.4.3",
-    "unplugin-vue-components": "^0.17.2",
-    "vite": "^2.6.4",
-    "vue-tsc": "^0.3.0"
-  }
+    "name": "vue3.x-vite-template",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc --noEmit && vite build",
+        "serve": "vite preview",
+        "prepare": "husky install"
+    },
+    "gitHooks": {
+        "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{js,vue,jsx,less,scss,json}": [
+            "prettier --write"
+        ],
+        "*.ts?(x)": [
+            "prettier --parser=typescript --write"
+        ]
+    },
+    "dependencies": {
+        "ant-design-vue": "^2.2.8",
+        "element-plus": "^1.2.0-beta.3",
+        "vue": "^3.2.21"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^1.9.3",
+        "husky": "^7.0.4",
+        "lint-staged": "^11.2.6",
+        "prettier": "2.4.1",
+        "typescript": "^4.4.3",
+        "unplugin-vue-components": "^0.17.2",
+        "vite": "^2.6.4",
+        "vue-tsc": "^0.3.0"
+    }
 }
