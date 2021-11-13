@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useStore } from 'vuex';
-import { key } from '../store';
+import { key } from '@/store';
 
 const store = useStore(key);
 

@@ -1,5 +1,5 @@
 import { Module } from 'vuex';
-import { State } from '../index';
+import { State } from '@/store';
 
 type UserInfo = {
     name: string;
