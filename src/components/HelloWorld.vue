@@ -41,10 +41,10 @@ const count = ref(0);
         <a-button @click="$router.push({ name: 'About' })" type="primary">AntD Button Go About</a-button>
     </p>
 
-    <h2>{{ `This template made by ${name}` }}</h2>
+    <h3>{{ `This template made by ${name}` }}</h3>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 a {
     color: #42b983;
 }
@@ -59,5 +59,24 @@ code {
     padding: 2px 4px;
     border-radius: 4px;
     color: #304455;
+}
+
+h3 {
+    height: 60px;
+    font-weight: 300;
+    line-height: 60px;
+    font-size: 14px;
+    background: linear-gradient(to right, #c6deff, #1495ff, #c6deff); /*渐变背景*/
+    background-size: 300%;
+    letter-spacing: 1px;
+    user-select: none;
+    background-clip: text;
+    color: transparent;
+    animation: flashColor 8s linear infinite;
+    @keyframes flashColor {
+        100% {
+            background-position: -300% 0;
+        }
+    }
 }
 </style>
