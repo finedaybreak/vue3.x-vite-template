@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useStore } from 'vuex';
-import { key } from '@/store';
-
-const store = useStore(key);
-
-const name = computed(() => store.state.user?.name);
-const age = computed(() => store.state.user?.age);
+import { useUserStore } from '@/store/user';
 
 defineProps<{ msg: string }>();
 
+const user = useUserStore();
+
 const count = ref(0);
+
+const userInfo = computed(() => user.userInfo);
 </script>
 
 <template>
@@ -41,7 +39,11 @@ const count = ref(0);
         <a-button @click="$router.push({ name: 'About' })" type="primary">AntD Button Go About</a-button>
     </p>
 
-    <h3>{{ `This template made by ${name}` }}</h3>
+    <h3>{{ `This template made by ${userInfo}` }}</h3>
+
+    <p>
+        <a-button @click="user.increaseUserLevel()" type="default">Add User Level</a-button>
+    </p>
 </template>
 
 <style lang="less" scoped>
