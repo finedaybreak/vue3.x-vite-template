@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer';
 import Components from 'unplugin-vue-components/vite';
 import { AntDesignVueResolver, ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import path from 'path';
+import Unocss from 'unocss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
         },
     },
     plugins: [
+        Unocss({}),
         vue(),
         Components({
             resolvers: [AntDesignVueResolver(), ElementPlusResolver()],

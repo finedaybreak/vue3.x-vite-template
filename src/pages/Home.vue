@@ -7,4 +7,5 @@ import HelloWorld from '@/components/HelloWorld.vue';
 <template>
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+    <div class="m-t-30px text-5xl fw100 animate-bounce-alt animate-count-infinite animate-1s">unocss</div>
 </template>
