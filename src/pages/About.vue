@@ -1,7 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-    <h1>About Page</h1>
+    <div class="p-20px text-20px text-center font-semibold">About Page</div>
 </template>
-
-<style lang="less" scoped></style>
