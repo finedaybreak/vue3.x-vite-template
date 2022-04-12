@@ -2,8 +2,23 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 const spacing = {};
 
+for (let f = 0; f < 100; f += 0.1) {
+    let sortNum = 0;
+    const decimal = Math.floor((f * 10) % 10);
+    if (decimal !== 0) {
+        sortNum = parseFloat(f.toFixed(1));
+    } else {
+        sortNum = Math.floor(f);
+    }
+    const vw = sortNum + 'vw';
+    const vh = sortNum + 'vh';
+    spacing[vw] = vw;
+    spacing[vh] = vh;
+}
+
 for (let i = 0; i < 2000; i++) {
-    spacing[i + 'px'] = i + 'px';
+    const px = i + 'px';
+    spacing[px] = px;
 }
 
 module.exports = {
